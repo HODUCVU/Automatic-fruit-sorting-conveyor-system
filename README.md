@@ -2,7 +2,7 @@
 
 <!-- https://www.notion.so/Project-ce108af6dc6c45a6bdb49dc53c04b889?pvs=4 -->
 # Table of contents
-| Section | Descrition | Status | 
+| Sections | Descriptions | Status | 
 |---------|------------|--------|
 | [Documentations](#-documentations "Goto Documentations")| Build idea, input, output, tasks and plan for project | <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/4209397c-64a3-449a-924b-0729e6c986e9" alt="image" width="50" height="50"> |
 | [Object Detection](#-object-detection "Goto Object Detection") | Using YOLO model to detect objects in video stream collected by the ESP32CAM | <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/832590f3-cf5c-4218-acef-655844302de6" alt="image" width="50" height="50"> |
