@@ -14,7 +14,9 @@
 [![Notion](https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg)](https://www.notion.so/Project-ce108af6dc6c45a6bdb49dc53c04b889?pvs=4) Project Documentation
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/800edcc3-721c-444a-9be2-96a8f1e438f1" alt="image" width="35" height="35"> Object Detection 
-
+### Datasets
+### Training models
+### Evaluating models and conclusion
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
 ## Embedded Artificial Intelligence
 ## Reference Papers
