@@ -15,13 +15,13 @@
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/800edcc3-721c-444a-9be2-96a8f1e438f1" alt="image" width="35" height="35"> Object Detection 
 ### Datasets
-🔗 https://www.kaggle.com/datasets/sriramr/apples-bananas-oranges/data?select=original_data_set
+🔗 **Dataset:** https://www.kaggle.com/datasets/sriramr/apples-bananas-oranges/data?select=original_data_set
 
 💁 We only use apples and oranges data, so before train model, we need to pre-process dataset:
 - First: We need re-oraginal data to apples directory and oranges directory.
 - Second: Split data to train and test data. Actually, I want to create two folder (train and test).
 
-🔗 Open with  [![Open In Colab](https://colab.research.google.com/drive/1fs8ycZEtu2tMbgSwHToqrfSai0sONN93?usp=sharing)
+🔗 **Pre-processing datasest:**  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fs8ycZEtu2tMbgSwHToqrfSai0sONN93?usp=sharing) 
 ### Training models
 ### Evaluating models and conclusion
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
