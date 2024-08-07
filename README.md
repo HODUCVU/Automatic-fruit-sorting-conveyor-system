@@ -23,7 +23,15 @@
 
 🔗 **Pre-processing datasest:**  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fs8ycZEtu2tMbgSwHToqrfSai0sONN93?usp=sharing) 
 ### Training models
+💁 We have pre-processed data above, now we can train some models with the data.
+- In this project, I'm going to use PyTorch to train models.
+- I will experiment some models such as ResNet, Efficient, MobileNet...
+- See which model is compatible with our project based on criteria such as its accuracy and size.
+
+🔗 **Code**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HfSQ2LAKJ0-ZdKWwJImfyQirQ6zOeo3B?usp=sharing) 
+
 ### Evaluating models and conclusion
+
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
 ## Embedded Artificial Intelligence
 ## Reference Papers
