@@ -17,6 +17,9 @@
 ### Datasets
 🔗 **Dataset:** https://www.kaggle.com/datasets/sriramr/apples-bananas-oranges/data?select=original_data_set
 
+<img width="150" alt="Screen Shot 2018-06-08 at 4 59 36 PM" src="https://github.com/user-attachments/assets/c7efef07-d06a-43cd-9c64-1cd8798d8ef8">
+<img width="160" alt="Screen Shot 2018-06-12 at 11 50 19 PM" src="https://github.com/user-attachments/assets/48005b38-648f-4aad-b361-e69c807dca9f">
+
 💁 We only use apples and oranges data, so before train model, we need to pre-process dataset:
 - First: We need re-oraginal data to apples directory and oranges directory.
 - Second: Split data to train and test data. Actually, I want to create two folder (train and test).
