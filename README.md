@@ -5,8 +5,8 @@
 | Sections | Descriptions | Status | 
 |---------|------------|--------|
 | [Documentations](#-documentations "Goto Documentations")| Build idea, input, output, tasks and plan for project | <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/4209397c-64a3-449a-924b-0729e6c986e9" alt="image" width="50" height="50"> |
-| [Object Detection](#-object-detection "Goto Object Detection") | Using YOLO model to detect objects in video stream collected by the ESP32CAM | <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/832590f3-cf5c-4218-acef-655844302de6" alt="image" width="50" height="50"> |
-| [Web-server](#-web-server "Goto Web-server") | Building a web-server to monitor Camera and control system |  <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/832590f3-cf5c-4218-acef-655844302de6" alt="image" width="50" height="50"> |
+| [Object Detection](#-object-detection "Goto Object Detection") | Build model using PyTorch and deploy it onto Web-server using FastAPI| <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/832590f3-cf5c-4218-acef-655844302de6" alt="image" width="50" height="50"> |
+| [Web-server](#-web-server "Goto Web-server") | Building a web-server to embedded model AI, monitor Camera and control system |  <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/832590f3-cf5c-4218-acef-655844302de6" alt="image" width="50" height="50"> |
 | [Embedded Artificial Intelligence](#embedded-artificial-intelligence "Goto AI Embedded") | Building a system has hardward and AI, in detail that system can be a robot or similar | <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/832590f3-cf5c-4218-acef-655844302de6" alt="image" width="50" height="50">   |
 | [Reference papers](#reference-papers "Goto papers") | Research for project |   |
 | [Reference code](#reference-code "Goto code") | Implement project |   |
