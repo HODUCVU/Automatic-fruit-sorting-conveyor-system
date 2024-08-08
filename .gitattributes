@@ -1,1 +1,1 @@
-Object-Classification/models/resnet50_model.pth filter=lfs diff=lfs merge=lfs -text
+Object-Classification/models/resnet50/resnet50_model.pth filter=lfs diff=lfs merge=lfs -text
