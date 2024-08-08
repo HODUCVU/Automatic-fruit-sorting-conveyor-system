@@ -54,6 +54,8 @@
 |------------|----------------------|----------------------|------------------|-----------|
 | ResNet50   |    98.660714         |      94.017714       |    0.203992      |    89     |
 
+### Optimizing model
+
 ### Conclusion
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
