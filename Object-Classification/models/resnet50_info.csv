@@ -1,0 +1,2 @@
+Name,Accuracy testing (%),Accuracy predict (%),Time predict (s),Size (MB)
+ResNet,98.66071428571429,94.01771426200867,0.20399201760010327,89
