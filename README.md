@@ -33,7 +33,21 @@
 
 🔗 **Code**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HfSQ2LAKJ0-ZdKWwJImfyQirQ6zOeo3B?usp=sharing) 
 
+✈️ Such as I trained model with ResNet50 module, well, I have some experiment to get a good result like below:
+
+- 📉 This chart is descript for train and test loss/accuracy of model
+  
+  <img width="500" src="https://github.com/user-attachments/assets/40e5b82b-bdfd-4682-9886-cc9ee407f4e6">
+- 🍏🍊 We can make some prediction to see what's going on
+  
+  <img width="250" src="https://github.com/user-attachments/assets/d1474db1-1817-4769-8e13-b2287f45b668">
+  <img width="355" src="https://github.com/user-attachments/assets/270eece8-77de-45b7-b603-3494ef04b28e">
+
 ### Evaluating models and conclusion
+| Name model | Accuracy Testing (%) | Accuracy Predict (%) | Time Predict (s) | Size (MB) |
+|------------|----------------------|----------------------|------------------|-----------|
+| ResNet50   |    98.660714         |      94.017714       |    0.203992      |    89     |
+
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
 ## Embedded Artificial Intelligence
