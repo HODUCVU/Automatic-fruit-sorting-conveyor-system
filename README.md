@@ -43,11 +43,12 @@
   <img width="250" src="https://github.com/user-attachments/assets/d1474db1-1817-4769-8e13-b2287f45b668">
   <img width="355" src="https://github.com/user-attachments/assets/270eece8-77de-45b7-b603-3494ef04b28e">
 
-### Evaluating models and conclusion
+### Evaluating models
 | Name model | Accuracy Testing (%) | Accuracy Predict (%) | Time Predict (s) | Size (MB) |
 |------------|----------------------|----------------------|------------------|-----------|
 | ResNet50   |    98.660714         |      94.017714       |    0.203992      |    89     |
 
+### Conclusion
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
 ## Embedded Artificial Intelligence
