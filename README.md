@@ -44,6 +44,12 @@
   <img width="355" src="https://github.com/user-attachments/assets/270eece8-77de-45b7-b603-3494ef04b28e">
 
 ### Evaluating models
+
+🔗 **Train with many models and compare them together**: 
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nveyYTeDHRujXRClibwemEGD66HsC8KG?usp=sharing)
+
+♾️ **Results**
 | Name model | Accuracy Testing (%) | Accuracy Predict (%) | Time Predict (s) | Size (MB) |
 |------------|----------------------|----------------------|------------------|-----------|
 | ResNet50   |    98.660714         |      94.017714       |    0.203992      |    89     |
