@@ -45,14 +45,17 @@
 
 ### Evaluating models
 
-🔗 **Train with many models and compare them together**: 
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nveyYTeDHRujXRClibwemEGD66HsC8KG?usp=sharing)
-
-♾️ **Results**
 | Name model | Accuracy Testing (%) | Accuracy Predict (%) | Time Predict (s) | Size (MB) |
 |------------|----------------------|----------------------|------------------|-----------|
-| ResNet50   |    98.660714         |      94.017714       |    0.203992      |    89     |
+| ResNet50   |    98.660714         |      97.001250       |    0.203992      |    89     |
+|	ResNet18	 |    97.321429	        |      99.881893	     |    0.178116	    |    42     |
+|	MobileNetV2|	  98.660714         |      99.923056	     |    0.170975	    |    8      |
+
+- **⏲️ Shortest predict time:**  MobileNetV2 with 0.17 seconds
+
+- **📁 Smallest size file:** MobileNetV2 with 8 MB
+
+- **📉 Accuracy:** The above three models have similar accuracy rates, but MobileNetV2 is trained with the fewest training iterations (5), while ResNet50 and ResNet18 are trained with 8 iterations.
 
 ### Optimizing model
 
