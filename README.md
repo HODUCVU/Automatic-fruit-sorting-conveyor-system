@@ -63,6 +63,10 @@
 ### Conclusion
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/2e5dbf79-4970-4700-b223-b7c6accf3ecd" alt="image" width="35" height="35"> Web-server
+- **:electron: GET API from ESP32 ** [ESP32 GET JSON from API - ESP32 GET request from API receive JSON](https://www.youtube.com/watch?v=cgoCmYLeaSI)
+- **:electron: POST API from ESP32** [ESP32 POST JSON to api endpoint - ESP32 POST request to API endpoint](https://www.youtube.com/watch?v=dblfMlRa6qI)
+- **:electron: PUT (update) API from ESP32** [ESP32 PUT JSON to api endpoint - ESP32 POST request to API endpoint](https://www.youtube.com/watch?v=ZuvkB5vBXLA)
+
 ## Embedded Artificial Intelligence
 ## Reference Papers
 | Paper | Link | Quote |
