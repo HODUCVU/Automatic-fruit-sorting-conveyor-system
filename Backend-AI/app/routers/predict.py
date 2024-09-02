@@ -2,9 +2,7 @@ from fastapi import Response, status, HTTPException, Depends, APIRouter, File, U
 from pathlib import Path
 from PIL import Image
 # import matplotlib.pyplot as plt
-
 from utils import modules
-
 
 router = APIRouter(
     prefix='/predict',
@@ -48,12 +46,6 @@ def start_event():
     start_clean_memory_in_background()
     print("Started background task")
 
-
-# from typing import Annotated
-# @router.post("/esp32cam")
-# async def create_image(file: Annotated[bytes, File()]):
-#     return {"File_size": len(file)}
-
 import os
 @router.get('/', status_code=status.HTTP_200_OK)
 def get_predictions():
@@ -63,10 +55,14 @@ def get_predictions():
 
 import uuid
 @router.post("/upload")
-async def upload(file: UploadFile = File(...)):
+async def upload(file: UploadFile | None = None):
+    if not file:
+        return {"Message": "No upload file sent"}
+    if file.size < 1:
+        return {"Message": "File isn't legal"}
+    # valid_extensions = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff"}
     file.filename = f'{uuid.uuid4()}.jpg'
     contents = await file.read()
-    
     image_dir.append(Path(f'{IMAGEDIR}{file.filename}'))
     image_dir[-1].parent.mkdir(parents=True, exist_ok=True)
     with open(image_dir[-1], 'wb') as f:
