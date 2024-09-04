@@ -60,6 +60,8 @@ async def upload(file: UploadFile | None = None):
         return {"Message": "No upload file sent"}
     if file.size < 1:
         return {"Message": "File isn't legal"}
+    if file.size > 5 *1024 * 1024:
+        return {"Message": "File too large"}
     # valid_extensions = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff"}
     file.filename = f'{uuid.uuid4()}.jpg'
     contents = await file.read()
