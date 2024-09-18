@@ -6,8 +6,8 @@
 #include "esp_camera.h"
 
 // WiFi credentials
-const char* ssid = "CUONGTRAN";
-const char* password = "1234567890";
+const char* ssid = "*****";
+const char* password = "******";
 
 // Server URL
 const char* serverUrl = "https://server-fastapi-2b0eb22f2d67.herokuapp.com/";
