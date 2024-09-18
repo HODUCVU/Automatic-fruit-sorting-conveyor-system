@@ -9,32 +9,75 @@
 # check active portL `isof -i:8000`
 #  kill port: kill -9 <PID>
 
-from fastapi import FastAPI
+# import io
+from fastapi import FastAPI, status, UploadFile, BackgroundTasks
+from PIL import Image
+from app.utils import modules
+import uuid
+import shutil
+import os
+import logging
+logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
 
-# domain name (CORS)
-from fastapi.middleware.cors import CORSMiddleware
-# Everyone can access API
-origins = ["*"]
+model = modules('app/models/mobilenet_v2_model.pth')
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
-from routers import predict
-app.include_router(predict.router)
+IMAGEDIR = "app/images/"
+os.makedirs(IMAGEDIR, exist_ok=True)
+image_dir = []
 
-@app.get("/")
-async def root():
-    return {"message": "This is server for pbl5 project"}
-
-if __name__ == "__main__":
-    print('SERVER is running...')
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+def save_image(file: UploadFile):
+    """Upload an image and trigger background tasks for cleanup."""
+    global image_dir
     
+    file.filename = f'{uuid.uuid4()}.jpg'
+    image_path = os.path.join(IMAGEDIR, file.filename)
+    logging.info(f"Starting to save the image: {file.filename}")
+    try:
+        if file.size > 2 * 1024 * 1024:
+            return {"Message": "File too large"}
+        # Save image
+        with open(image_path, 'wb') as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        image_dir.append(image_path)
+        
+        logging.info(f"Image saved in {image_path}")
+        logging.info(f"File size after saving: {os.path.getsize(image_path)}")
+        
+    except Exception as e:
+        logging.error(f"Error saving image: {e}")
+    finally:
+        file.file.seek(0)    
+
+def cleanup_images():
+    global image_dir
+    logging.info("Start cleaning images...")
+    if len(image_dir) > 30:
+        for img_path in image_dir[:-5]:
+            if os.path.exists(img_path):
+                os.remove(img_path)
+        image_dir = image_dir[-5:]
+        logging.info("Cleaned up old images")
+
+@app.get('/', status_code=status.HTTP_200_OK)
+async def get_predictions():
+    """Get predictions for the latest image."""
+    if not image_dir:
+        return {"Message": "No image found"}
+    try:
+        image = Image.open(image_dir[-1])
+        pred = model.make_predict(image)
+        return {"message": model.classes[pred]}
+    except Exception as e:
+        logging.info(f"Error prediction: {e}")
+        return {"message": e}
+        
+
+@app.post('/', status_code=status.HTTP_201_CREATED)
+async def upload(file: UploadFile, background_tasks: BackgroundTasks):
+    save_image(file)
+    background_tasks.add_task(cleanup_images)
+    return {"Message": "upload method"}

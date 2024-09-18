@@ -1,2 +1,2 @@
 from .utils import modules
-from .routers import predict
+# from .routers import predict

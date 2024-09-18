@@ -1,75 +1,61 @@
-from fastapi import Response, status, HTTPException, Depends, APIRouter, File, UploadFile
-from pathlib import Path
-from PIL import Image
-# import matplotlib.pyplot as plt
-from utils import modules
 
-router = APIRouter(
-    prefix='/predict',
-    tags=['Prediction']
-)
-# Test 
-model = modules('models/mobilenet_v2_model.pth')
+# from fastapi import status, APIRouter, UploadFile
+# from pathlib import Path
+# from PIL import Image
+# from app.utils import modules
+# # import threading
+# import uuid
+# import asyncio
 
-image_dir = [Path('test_inputs/input_1.png')]
+# router = APIRouter(
+#     prefix='/predict',
+#     tags=['Prediction'],
+# )
+# # Test 
+# model = modules('app/models/mobilenet_v2_model.pth')
 
-IMAGEDIR = "test_inputs/"
+# image_dir = []
+# IMAGEDIR = "app/test_inputs/"
 
-import time
-def clean_memory(image_dir):
-    while True:
-        # how many images in store
-        files = []
-        for _, _, filenames in os.walk(IMAGEDIR):
-            for filename in filenames:
-                files.append(os.path.join(IMAGEDIR, filename))
-        # clean memory
-        if len(files) >= 30: # 1s video has 30 frames 
-            for file in files:
-                if os.path.exists(file):
-                    os.remove(file)
-            print("Cleaned memory")
-            del files
-            del image_dir[:-1]
-        # wait for 2s before checking again
-        time.sleep(2)
-import threading
-def start_clean_memory_in_background():
-    thread = threading.Thread(target=clean_memory, args=(image_dir,))
-    # Allows the thread to close when the main program exits
-    thread.setDaemon(True)    
-    thread.start()
+# # Create a lock for async-safe operations
+# image_dir_lock = asyncio.Lock()
 
-# # Initialize the background task when the FastAPI app starts
-@router.on_event("startup")
-def start_event():
-    start_clean_memory_in_background()
-    print("Started background task")
+# async def clean_memory():
+#     # files = [f for f in Path(IMAGEDIR).glob('*') if f.is_file()]
+#     async with image_dir_lock:
+#         files_to_remove = image_dir[:-5]
+#         for file in files_to_remove:
+#             file.unlink()  # Removes file
+#         del image_dir[:-5]
 
-import os
-@router.get('/', status_code=status.HTTP_200_OK)
-def get_predictions():
-    image = Image.open(image_dir[-1])
-    pred = model.make_predict(image)
-    return {"message": model.classes[pred]}
+# @router.get('/', status_code=status.HTTP_200_OK)
+# async def get_predictions():
+#     if not image_dir:
+#         return {"Message": "No image found"}
+#     async with image_dir_lock:
+#         image = Image.open(image_dir[-1])
+#         pred = model.make_predict(image)
+#     return {"message": model.classes[pred]}
 
-import uuid
-@router.post("/upload")
-async def upload(file: UploadFile | None = None):
-    if not file:
-        return {"Message": "No upload file sent"}
-    if file.size < 1:
-        return {"Message": "File isn't legal"}
-    if file.size > 5 *1024 * 1024:
-        return {"Message": "File too large"}
-    # valid_extensions = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff"}
-    file.filename = f'{uuid.uuid4()}.jpg'
-    contents = await file.read()
-    image_dir.append(Path(f'{IMAGEDIR}{file.filename}'))
-    image_dir[-1].parent.mkdir(parents=True, exist_ok=True)
-    with open(image_dir[-1], 'wb') as f:
-        f.write(contents)
-    return {"Uploaded": image_dir[-1]}
+# @router.post('/', status_code=status.HTTP_201_CREATED)
+# async def upload(file: UploadFile | None = None):
+#     # with image_dir_lock:
+#     if not file:
+#         return {"Message": "No upload file sent"}
+#     if file.size < 1:
+#         return {"Message": "File isn't legal"}
+#     if file.size > 1 *1024 * 1024:
+#         return {"Message": "File too large"}
+#     file.filename = f'{uuid.uuid4()}.jpg'
+#     contents = await file.read()
+#     image_path = Path(f'{IMAGEDIR}{file.filename}')
+#     image_path.parent.mkdir(parents=True, exist_ok=True)
+#     with open(image_path, 'wb') as f:
+#         f.write(contents)
+#     async with image_dir_lock:
+#         image_dir.append(image_path)
+#         # check len of image_dir, if it over 20 image then delete image
+#         if len(image_dir) >= 20:
+#             await clean_memory()
+#     return {"Uploaded": str(image_path)}
 
-# ===================
-#  Stream video

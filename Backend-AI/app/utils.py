@@ -1,9 +1,6 @@
 import torch 
 from torchvision import models
 from torchvision import transforms
-# from .app import utils
-# from PIL import Image 
-# from pathlib import Path
 
 class modules():
   def __init__(self, model_path: str) -> None:
