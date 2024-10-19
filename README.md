@@ -16,7 +16,8 @@
 
 ## <img src="https://github.com/HODUCVU/Detect-Object-From-ESP32CAM/assets/73897430/800edcc3-721c-444a-9be2-96a8f1e438f1" alt="image" width="35" height="35"> Object Detection 
 ### Datasets
-🔗 **Dataset:** https://www.kaggle.com/datasets/sriramr/apples-bananas-oranges/data?select=original_data_set
+<!-- 🔗 **Dataset:** https://www.kaggle.com/datasets/sriramr/apples-bananas-oranges/data?select=original_data_set -->
+🔗 **Dataset:** https://github.com/rifatkurban/apple_dataset
 
 <img width="150" alt="Screen Shot 2018-06-08 at 4 59 36 PM" src="https://github.com/user-attachments/assets/c7efef07-d06a-43cd-9c64-1cd8798d8ef8">
 <img width="160" alt="Screen Shot 2018-06-12 at 11 50 19 PM" src="https://github.com/user-attachments/assets/48005b38-648f-4aad-b361-e69c807dca9f">
@@ -32,8 +33,9 @@
 - I will experiment some models such as ResNet, Efficient, MobileNet...
 - See which model is compatible with our project based on criteria such as its accuracy and size.
 
-🔗 **Code**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HfSQ2LAKJ0-ZdKWwJImfyQirQ6zOeo3B?usp=sharing) 
-
+<!-- 🔗 **Code**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HfSQ2LAKJ0-ZdKWwJImfyQirQ6zOeo3B?usp=sharing) 
+-->
+🔗 **Code**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1RZ-HQ3bnOJNgjt8CzK5zrsYRJc66_X57?usp=sharing) 
 ✈️ Such as I trained model with ResNet50 module, well, I have some experiment to get a good result like below:
 
 - 📉 This chart is descript for train and test loss/accuracy of model
