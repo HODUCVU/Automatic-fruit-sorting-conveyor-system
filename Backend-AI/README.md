@@ -8,12 +8,14 @@
 
 # Fix latency of server
 1. increase computer on server. -> Not ok
-2. Using AWS
+2. Using Colab and PyNgrok to deploy serve (temporary) -> Quite Good
+- 🖥️ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ufo8iX-KTeOn11CYhyvI60IpBDCuAWG3?usp=sharing)
+
+- https://www.youtube.com/watch?v=YYxV_InMGY8&list=LL&index=124&t=1048s
+3. Using AWS
 - Upload image to AWS.
 - FastAPI download Image and predict on local machine (every 1s).
 - Upload result on to AWS with file.txt format.
-3. Using Colab and PyNgrok to deploy serve (temporary)
-- https://www.youtube.com/watch?v=YYxV_InMGY8&list=LL&index=124&t=1048s
 
 # Fix rate of model
 1. Apple Fruit Scab Recognition
