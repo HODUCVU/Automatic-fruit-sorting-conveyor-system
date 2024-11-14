@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status, UploadFile, BackgroundTasks, HTTPException
 from fastapi.responses import FileResponse
-from pyngrok import ngrok
+#from pyngrok import ngrok
 import os
 import logging
 import nest_asyncio
@@ -43,8 +43,8 @@ async def predict(data: PredictionRequest):
         logging.error(f"Error in prediction: {e}")
         raise HTTPException(status_code=500, detail="Error in prediction")
 # Create a public URL using ngrok
-public_url = ngrok.connect(8000)
-print(f"FastAPI is running at: {public_url}")
+#public_url = ngrok.connect(8000)
+#print(f"FastAPI is running at: {public_url}")
 
 # # Run the app using Uvicorn directly (without asyncio.run)
 uvicorn.run(app, host="0.0.0.0", port=8000)
