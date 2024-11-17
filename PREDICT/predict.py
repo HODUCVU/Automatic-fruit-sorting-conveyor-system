@@ -11,9 +11,9 @@ class Modules():
       transforms.CenterCrop(224),
       transforms.ToTensor()
     ])
-    # self.classes = ['GreenApple', 'RedApple']
+    self.classes = ['GreenApple', 'RedApple']
     
-    self.classes = ['RedApple','GreenApple']
+    # self.classes = ['RedApple','GreenApple']
     self.model = self.mobileNet_v2(model_path=model_path)
     
   def mobileNet_v2(self, model_path, device='cpu'):
@@ -39,3 +39,13 @@ class Modules():
     except KeyError:
         print("error\n")
         return None
+
+if __name__ == '__main__':
+  model = Modules('mobilenet_v2_model.pth')
+  from PIL import Image
+  image = Image.open('a1.jpeg')
+  pred = model.make_predict(image)
+  print(pred)
+  image = Image.open('a2.jpeg')
+  pred = model.make_predict(image)
+  print(pred)
