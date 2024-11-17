@@ -1,3 +1,5 @@
 Backend-AI/.env
 Backend-AI/venv
 __pycache__
+__pycache__/
+venv/
